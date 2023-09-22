@@ -449,10 +449,10 @@ const app = Vue.createApp({
 
             
 
-            current_hamming_distance_eq1 = hamming_distance_AV + hamming_distance_PR + hamming_distance_UI
-            current_hamming_distance_eq2 = hamming_distance_AC + hamming_distance_AT
-            current_hamming_distance_eq3eq6 = hamming_distance_VC + hamming_distance_VI + hamming_distance_VA + hamming_distance_CR + hamming_distance_IR + hamming_distance_AR
-            current_hamming_distance_eq4 = hamming_distance_SC + hamming_distance_SI + hamming_distance_SA
+            current_hamming_distance_eq1 = (hamming_distance_AV + hamming_distance_PR + hamming_distance_UI).toFixed(4)
+            current_hamming_distance_eq2 = (hamming_distance_AC + hamming_distance_AT).toFixed(4)
+            current_hamming_distance_eq3eq6 = (hamming_distance_VC + hamming_distance_VI + hamming_distance_VA + hamming_distance_CR + hamming_distance_IR + hamming_distance_AR).toFixed(4)
+            current_hamming_distance_eq4 = (hamming_distance_SC + hamming_distance_SI + hamming_distance_SA).toFixed(4)
             current_hamming_distance_eq5 = 0
 
 
@@ -483,10 +483,10 @@ const app = Vue.createApp({
             normalized_hamming_eq5 = 0
 
             //multiply by step because distance is pure
-            maxHamming_eq1 = this.maxHammingData['eq1'][String(eq1_val)]*step
-            maxHamming_eq2 = this.maxHammingData['eq2'][String(eq2_val)]*step
-            maxHamming_eq3eq6 = this.maxHammingData['eq3'][String(eq3_val)][String(eq6_val)]*step
-            maxHamming_eq4 = this.maxHammingData['eq4'][String(eq4_val)]*step
+            maxHamming_eq1 = (this.maxHammingData['eq1'][String(eq1_val)]-1)*step
+            maxHamming_eq2 = (this.maxHammingData['eq2'][String(eq2_val)]-1)*step
+            maxHamming_eq3eq6 = (this.maxHammingData['eq3'][String(eq3_val)][String(eq6_val)]-1)*step
+            maxHamming_eq4 = (this.maxHammingData['eq4'][String(eq4_val)]-1)*step
 
             if (!isNaN(available_distance_eq1)){
                 n_existing_lower=n_existing_lower+1
