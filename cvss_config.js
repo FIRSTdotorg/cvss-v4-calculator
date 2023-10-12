@@ -561,7 +561,7 @@ cvssConfig = {
               "tooltip": "",
               "value": "L"
             },
-            "Negligible (N)": {
+            "None (N)": {
               "tooltip": "",
               "value": "N"
             },
@@ -588,7 +588,7 @@ cvssConfig = {
               "tooltip": "",
               "value": "L"
             },
-            "Negligible (N)": {
+            "None (N)": {
               "tooltip": "",
               "value": "N"
             }
@@ -615,7 +615,7 @@ cvssConfig = {
               "tooltip": "",
               "value": "L"
             },
-            "Negligible (N)": {
+            "None (N)": {
               "tooltip": "",
               "value": "N"
             }
