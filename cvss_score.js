@@ -236,7 +236,14 @@ function cvss_score(cvssSelected, lookup, maxSeverityData, macroVectorResult) {
     if (value > 10) {
         value = 10.0
     }
-    return Math.round(value * 10) / 10
+    // Round half up at one decimal place, lifting the value by a small epsilon first: the
+    // interpolation arithmetic can land one floating-point ULP below an x.x5 tie (for example
+    // 5.6499999999999995 for 5.65), and a bare Math.round would then round to the wrong side.
+    // 522 of the 104,976 base vectors are affected. This matches the upstream fix that landed
+    // in RedHatProductSecurity/cvss-v4-calculator on 2024-11-01 (issue #66, pull request #67)
+    // and the CVSS Python implementation the reference data is generated from.
+    const EPSILON = Math.pow(10, -6);
+    return Math.round((value + EPSILON) * 10) / 10
 }
 
 function getEQMaxes(lookup, eq) {
